@@ -30,3 +30,46 @@ function insert(head, data) {
     return node;
   }
 }
+
+//////////not from hacker rank just more practice
+
+var List = function(data) {
+  this.data = data;
+  this.next = null;
+}
+
+List.prototype.add = function(data) {
+  var current = this;
+  while(current.next !== null) {
+    current = current.next;
+  }
+  current.next = new List(data);;
+}
+
+List.prototype.remove = function() {
+  var current = this;
+  while(current.next.next !== null) {
+    current = current.next
+  }
+  current.next = null;
+  console.log(current)
+}
+
+List.prototype.print = function() {
+  var output = [];
+  var current = this;
+  output.push(current.data)
+  while(current.next !== null) {
+    current = current.next;
+    output.push(current.data)
+  }
+  console.log(output)
+}
+
+var list = new List('1');
+list.add('2');
+list.add('3');
+list.add('4');
+list.print()
+list.remove();
+list.print()
