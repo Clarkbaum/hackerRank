@@ -19,6 +19,8 @@ Sample Output
 2 --> 1 --> NULL
 */
 
+//practice
+
 function insert(head, data) {
   var node = new Node();
   node.data = data;
